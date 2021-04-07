@@ -11,8 +11,10 @@ ENV SDKROOT=/usr/lib/android-sdk
 RUN echo y | sdkmanager --sdk_root=$SDKROOT "platform-tools" "platforms;android-28" "emulator"
 RUN echo y | sdkmanager --sdk_root=$SDKROOT "system-images;android-28;google_apis;x86"
 RUN apt-get install make
+RUN apt-get install tmux
 ENV PATH=/usr/lib/android-sdk/emulator:$PATH
 RUN cd /usr/lib/android-sdk/emulator && echo no | avdmanager create avd -n Android28 -k "system-images;android-28;google_apis;x86"
+ENV QTWEBENGINE_DISABLE_SANDBOX=1
 CMD emulator -avd Android28
 
 ## --- Instructions ---
