@@ -34,5 +34,6 @@ Build and start the container, then do:
 
 1. Run `tmux` to open a new terminal.
 1. Run `emulator -avd Android28` to start the AVD.
-1. Wait until the device is loaded, and run `adb install app-debug.apk` (replace with your apk file) to install the application.
+1. Wait until the device is loaded, and leave thy terminal by pressing ctr (hold) + b, then d.
+1. run `adb install app-debug.apk` (replace with your apk file) to install the application.
 1. You can now use the application in the virtual device (search for it using the Google search bar of the phone).
