@@ -18,6 +18,9 @@ CMD emulator -avd Android28
 ## --- Instructions ---
 ## Step 1: Build the container
 # docker build -t android-test .
-## Step 2: Run the container
+## Step 2: Allow Xhost access
+# xhost +local:root
+## Step 3: Run the container
 # docker run --privileged -it -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix android-test
-
+## Step 4: Forbid Xhost access
+# xhost -local:root
